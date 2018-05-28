@@ -10,6 +10,11 @@ export const constantRouterMap = [
    // redirect: '/index',
     component:_import('index'),
     name:'index'
+  },
+  {
+    path:'/login',
+    component:_import('login'),
+    name:'login'
   }
 ]
 export default new Router({
