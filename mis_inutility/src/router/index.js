@@ -1,15 +1,24 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+const _import = require('./_import_' + process.env.NODE_ENV)
 
 Vue.use(Router)
 
+export const constantRouterMap = [
+  {
+    path:'/',
+   // redirect: '/index',
+    component:_import('index'),
+    name:'index'
+  }
+]
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
+  // mode: 'history', // require service support
+  scrollBehavior: () => ({
+    y: 0
+  }),
+  routes: constantRouterMap,
+  mode: 'history',
+
 })
+
