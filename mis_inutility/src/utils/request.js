@@ -10,7 +10,7 @@ import router from '../router'
 
 // create an axios instance
 const service = axios.create({
-    baseURL: 'http://localhost:8787/whutHouseMgmtReposity', // api的base_url
+    baseURL: 'http://123.207.87.34:8080', // api的base_url
     // baseURL: 'http://118.126.117.96:8080/whutHouseMgmtReposity', // api的base_url  
 
     // `timeout` 指定请求超时的毫秒数(0 表示无超时时间)
