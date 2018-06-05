@@ -1,8 +1,9 @@
 import request from '@/utils/request'
 
+// 登录
 export function loginByUsername(userInfo) {
   return request({
-    url: '/userLogin/login',
+    url: '/user/login',
     method: 'post',
     data: userInfo
   })

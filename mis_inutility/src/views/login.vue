@@ -58,7 +58,14 @@ export default {
           let param = Object.assign({}, this.loginForm);
           loginByUsername(param)
             .then(res => {
-              console.log(res.data);
+              this.$store.commit("setUserInfo", res.data.data.user);
+              this.loginLoading = false;
+              let redirect = decodeURIComponent(
+                this.$route.query.redirect || "/index"
+              );
+              this.$router.push({
+                path: redirect
+              });
             })
             .catch(err => {
               this.tipMessage = "请输入正确的用户名或密码";
@@ -68,21 +75,6 @@ export default {
               });
               this.loginLoading = false;
             });
-          this.$sroe.commit("setUserInfo", data);
-          this.$store.dispatch("LoginByUsername", param).then(message => {
-            this.$message({
-              type: "success",
-              message: message,
-              duration: 2000
-            });
-            this.loginLoading = false;
-            let redirect = decodeURIComponent(
-              this.$route.query.redirect || "/"
-            );
-            this.$router.push({
-              path: redirect
-            });
-          });
         }
       });
     },
@@ -111,8 +103,8 @@ export default {
   }
 }
 .containter {
-  width: 20vw; // height:350px;
-  margin-left: 40vw;
+  width: 40vw; // height:350px;
+  margin-left: 30vw;
   .login-container {
     // position: fixed;
     // right: 20%;
