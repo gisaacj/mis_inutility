@@ -9,18 +9,6 @@
     <title>mis_inutility</title>
   </head>
   <body>
-    <div id="app" v-model = "word"></div><div id="fontdiv" class="fontdiv"></div>
-    <div class="pushtext">  
-        <textarea id="message" maxlength="15" ></textarea>  
-        <div onclick="pushtext()" class="pushbtn">发送</div>  
-    </div>  
-    <!-- built files will be auto injected -->
-    <script>
-      var t = document.getElementById("fontdiv");
-      t.onmouseover=function(){
-        t.style.visibility='hidden';
-        setTimeout("t.style.visibility='visible';",1000);
-      }
-    </script>
+    <div id="app" v-model = "word"></div>
   </body>
 </html>

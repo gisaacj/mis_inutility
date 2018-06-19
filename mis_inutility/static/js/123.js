@@ -13,7 +13,11 @@ var id=setInterval(function(){
         }
 },1000)
 });
-
+      var t = document.getElementById("fontdiv");
+      t.onmouseover=function(){
+        t.style.visibility='hidden';
+        setTimeout("t.style.visibility='visible';",1000);
+      }
 function messaction(ppp) {  
        ppp.addClass("changmessage");  
    }  
